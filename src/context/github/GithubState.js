@@ -55,10 +55,7 @@ const GithubState = props => {
       headers: { Authorization: githubToken }
     });
 
-    const [user, repos] = await Promise.all([
-      github.get(`/users/${username}?`),
-      github.get(`/users/${username}/repos?per_page=5&sort=created:asc?`)
-    ]);
+    const user = await github.get(`/users/${username}?`);
 
     dispatch({
       type: GET_USER,
@@ -78,10 +75,7 @@ const GithubState = props => {
       headers: { Authorization: githubToken }
     });
 
-    const [user, repos] = await Promise.all([
-      github.get(`/users/${username}?`),
-      github.get(`/users/${username}/repos?per_page=5&sort=created:asc?`)
-    ]);
+    const repos = await github.get(`/users/${username}/repos?per_page=5&sort=created:asc?`);
 
     dispatch({
       type: GET_REPOS,
