@@ -1,4 +1,3 @@
-import { getDefaultWatermarks } from "istanbul-lib-report";
 import { SET_ALERT, REMOVE_ALERT } from "../types";
 
 // eslint-disable-next-line import/no-anonymous-default-export
